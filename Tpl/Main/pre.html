@@ -1,0 +1,63 @@
+<include file='Common:header' />
+<include file='Main:siderbar' />
+<link rel="stylesheet" type="text/css" href="__CSS__/Main/base.css"/>
+<link rel="stylesheet" type="text/css" href="__CSS__/Main/pre.css"/>
+
+<div class='content'>
+	<div class='alert alert-warning'>
+		<p><b>大赛公告:</b></p>
+		<p>
+			{$announcement}
+		</p>
+	</div>	
+
+	<div class='bs-docs-example block-upload'>
+
+		<if condition='$file'>
+			<div class='alert alert-success'> 
+				已上传：<a href="{$file['saveName']}">{$file['content']}</a>
+			</div>
+		<else />
+			<div class='alert alert-danger'>未上传开题报告文档</div>
+		</if>
+
+
+	    <form  enctype="multipart/form-data" method='post' action="{:U(dealWithUpload)}">
+	    	<div>
+				<p>开题报告材料上传:</p>
+				<input type='file' name='preDoc'>
+				<p class='text-error'>文档格式要求是pdf,不大于8M,已经上传过的会直接覆盖上次上传</p>
+				<p class='text-error'>命名规则：创新_队伍编号_队伍名_开题报告.pdf</p>
+			</div>
+	        <button class='btn'>上传</button>
+	    </form>
+
+	</div>
+
+	<div class='bs-docs-example block-platform'>
+
+		<if condition='$platform'>
+			<div class='alert alert-success'> 
+				已经选择：{$platform} 平台
+			</div>
+		<else />
+			<div class='alert alert-danger'>未选择平台</div>
+		</if>
+
+	    <form  enctype="multipart/form-data" method='post' action="{:U(dealWithPlatform)}">
+				<label>请选择云平台:</label>
+				<select class="select-platform" name="platform">
+					<option></option>
+					<option>微软云</option>
+					<option>阿里云</option>
+					<option>百度云</option>
+					<option>新浪云</option>
+				</select><br/>
+		        <button class='btn platform-submit'>确定</button>
+	    </form>
+	</div>
+</div>
+
+<script type="text/javascript" src='__JS__/Main/pre.js'></script>
+
+<include file='Common:footer' />

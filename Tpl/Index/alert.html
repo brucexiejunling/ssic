@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta chatset='utf-8'>
+	<title>中山大学“百田杯”软件创新与应用大赛</title>
+	<link href="__IMG__/ssic.ico" rel="shortcut icon">
+	<link rel="stylesheet" type="text/css" href="__CSS__/global.css">
+	<script type="text/javascript" src="__JS__/jquery-1.8.3.min.js"></script>
+	<script type="text/javascript" src="__JS__/bootstrap.min.js"></script>	
+	<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/bootstrap.min.css">
+
+	<script type="text/javascript">
+		var _IE = (function(){
+			var v = 3, div = document.createElement('div'), all = div.getElementsByTagName('i');
+			while (
+				div.innerHTML = '<!--[if gt IE ' + (++v) + ']><i></i><![endif]-->',
+				all[0]
+				);
+				return v > 4 ? v : false ;
+		}());
+
+			</script>
+
+</head>
+<body>
+	<div class="global">
+		<!-- <div class='logo'>
+			<a href='{:U('Index/index')}'><img class='logo' src="__IMG__/logo.png"></a>
+			<h1 class='title'>
+			</h1>
+		</div> -->
+		<div class="main">
+			<div class="alert alert-error">
+				<p class="text-center">请用chrome、firefox或者IE9+浏览器打开，360或其它有两种模式的浏览器请开启高速模式（地址栏右边）
+				</p>
+			</div>
+			<a id='back' class='btn btn-link' href='{:U("Index/index")}'>返回首页</a>
+
+
+		</div>
+	</div>
+	<script type="">
+		if (_IE != false && _IE <= 8) {
+			$('a#back').hide();
+		}
+	</script>
+
+</body>

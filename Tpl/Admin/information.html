@@ -1,0 +1,34 @@
+<include file='Common:header'/>
+<include file='sidebar' />
+
+<link rel="stylesheet" type="text/css" href="__CSS__/Admin/information.css">
+
+<div class='wrapper'>
+
+	<form class='goddamn-form'>
+
+	<div class='edit-block'>
+		<h2>大赛信息</h2>
+		<textarea name='info'>{$info}</textarea>
+	</div>
+
+	<div class='edit-block'>
+		<h2>比赛规则</h2>
+		<textarea name='rule'>{$rule}</textarea>
+	</div>
+
+	<div class='edit-block'>
+		<h2>参赛流程</h2>
+		<textarea name='route'>{$route}</textarea>
+	</div>
+
+	<div class='buttons'>
+		<button class='btn btn-large pull-right modify info-btn'>保存修改</button>
+	</div>
+
+	</form>
+</div>
+
+<script type="text/javascript" src='__JS__/Admin/information.js'></script>
+
+<include file='Common:footer'/>

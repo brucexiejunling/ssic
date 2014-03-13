@@ -1,0 +1,13 @@
+.block-upload:after {
+	content: "上传开题报告文档";
+	font-family: '圆体', '微软雅黑';
+}
+
+.block-platform:after {
+	content: "选择云平台";
+	font-family: '圆体', '微软雅黑';
+}
+
+div.alert {
+	margin-top: 20px;
+}

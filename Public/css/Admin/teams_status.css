@@ -1,0 +1,12 @@
+div.wrapper {
+	padding-left: 15px;
+}
+
+select {
+	width: 64px;
+	margin: 0px;
+	padding: 0px;
+	height: 23px;
+	line-height: 12px;
+	font-size: 12px;
+}	

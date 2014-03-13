@@ -1,0 +1,81 @@
+
+<include file="Common:header" />
+	<link rel="stylesheet" type="text/css" href="__CSS__/index/index.css">
+	<div class='opacity-bg'></div>
+
+	<div class="right-bar box">
+		<ul class="nav nav-tabs nav-stacked nav-pills">
+			<if condition='$canApply'>
+				<li id="#sign-up">
+					<a class="sign-up" href="{:U('SignUp/signup')}">参赛报名</a>
+				</li>
+			<else />
+				<li id="#sign-up" class='disabled'>
+					<a class="sign-up" href="#">报名已结束</a>
+				</li>
+			</if>
+			<li id="vote" class='disabled' >
+				<a class="vote"  href="" >网上投票</a>
+			</li>
+			<eq name='isLogin' value='false'><li id="login" class='login'>
+			<else />
+			<li id="login" class='login' style='display:none' ></eq>
+				<a class="login" href="" >用户登陆</a>
+			</li>
+		</ul>
+			<div class="login-dialog">
+				<form id="login-form" method="post" action="{:U('Index/validate')}">
+					<span>账号:</span><input type="text" class="username" name="username"><br>
+					<span>密码:</span><input type="password" class="password" name="password"><br>
+					<span><button class="btn" type="submit">确认登陆</button></span>
+				</form>
+			</div>
+
+		<eq name='isLogin' value='false'><ul id="after-login" class="nav nav-tabs nav-stacked nav-pills" style='display:none'>
+		<else />
+		<ul id="after-login" class="nav nav-tabs nav-stacked nav-pills" style='display:block'></eq>
+			<li id="logOut">
+				<a href="" >用户登出</a>
+			</li>
+			<li id="team-home">
+				<a href="{:U('Main/index')}" >我的团队</a>
+			</li>
+		</ul>
+
+		<div class="block">
+			<div class='block-heading'>大赛公告</div>
+			<div class='intro box'>
+				<pre class='right-pre intro box'>{$contest_anno}</pre> 
+			</div>
+		</div>
+
+		<div class="block">
+			<div class='block-heading'>参赛流程</div>
+			<div class='intro box'>
+				<pre class='right-pre intro box'>{$contest_route}</pre> 
+			</div>
+		</div>	
+
+		<div class="block">
+			<div class='block-heading'> 联系我们 </div>
+			<div class='intro box'>
+			<pre class='right-pre'>
+中心网站: <a href='http://center.sysu.edu.cn'>center.sysu.edu.cn</a>
+官方微博: <a href='http://e.weibo.com/u/2141455241'>e.weibo.com/u/2141455241</a>
+			</pre>
+			</div>
+		</div>
+
+	</div>
+
+	<div class="left-bar">		
+		<div class="team-info overflow-hidden">
+			<include file="team" />
+		</div>	
+		<include file="info" />
+	</div>
+
+<script type="text/javascript" src="__JS__/index/index.js"></script>
+<include file="Common:footer" />
+
+

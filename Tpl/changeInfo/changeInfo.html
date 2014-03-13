@@ -1,0 +1,91 @@
+<include file="Common:header" />
+<link rel="stylesheet" type="text/css" href="__CSS__/sign_up/signup.css">
+
+<form method="post" action="{:U('dealWithFormInfo')}">
+
+	<div class='float-left'>
+		<div class="bs-docs-example block-team clear">
+			<div class="signup-form">
+				<input type='hidden' name='teamId' value={$Team.id}>
+				<div><span class='block-label'>团队名称:</span><input id="team-name" name="teamName" type="text" value="{$Team.name}"></div>
+				<div>
+					<span class='block-label'>团队人数:</span>
+					<select class="member-count" name="memberCount" value={$membersCount}>
+						<eq name='membersCount' value='3'><option selected='selected' value='3'> <else/><option value='3'></eq>3</option>
+						<eq name='membersCount' value='4'><option selected='selected' value='4'><else/><option value='4'></eq>4</option>
+						<eq name='membersCount' value='5'><option selected='selected' value='5'><else/><option value='5'></eq>5</option>
+						<eq name='membersCount' value='6'><option selected='selected' value='6'><else/><option value='6'></eq>6</option>
+					</select>
+				</div>
+			</div>
+		</div>
+
+		<div class="bs-docs-example block-teacher clear">
+			<div class="advisor">
+				<input type='hidden' name='teacherId' value={$Advisor.id}>
+				<div><span class='block-label'>姓名:</span><input class="person-name" name="teacherName" type="text" value='{$Advisor.name}'></div>
+				<div><span class='block-label'>职称:</span><input id="teacher-pos" name="teacherPos" type="text" value='{$Advisor.position}'></div>
+				<div><span class='block-label'>所在单位:</span><input id="teacher-dptm" name="teacherDptm" type="text" value='{$Advisor.department}'></div>
+				<div><span class='block-label'>联系方式:</span><input id="teacher-contact" name="teacherContact" type="text" value='{$Advisor.contact}'></div>
+				<div><span class='block-label'>团队贡献:</span><input id="teacher-contribution" name="teacherContribution" type="text" value='{$Advisor.contribute}'></div>
+			</div>
+		</div>
+	</div>
+
+	<div class="bs-docs-example block-leader float-left">
+		<div class="leader">
+			<input type='hidden' name='memberId[]' value={$Leader.id}>
+			<div><span class='block-label'>姓名:</span><input value={$Leader.name} class="person-name" name="name[]" type="text"></div>
+			<div><span class='block-label'>学号:</span><input value={$Leader.studentId} class="student-id" name="sid[]" type="text"></div>
+			<div><span class='block-label'>学院:</span><input value={$Leader.school} class="school" name="school[]" type="text"></div>
+			<div><span class='block-label'>专业班级:</span><input value={$Leader.class} class="class"  name="class[]" type="text"> </div>
+			<div><span class='block-label'>宿舍:</span><input value={$Leader.dorm} class="dorm" name="dorm[]" type="text"></div>
+			<div><span class='block-label'>手机:</span><input value={$Leader.phone} class="phone" name="phone[]" type="text"></div>
+			<div><span class='block-label'>短号:</span><input value={$Leader.shortphone|default='--'} class="sPhone" name="sPhone[]" type="text"></div>
+			<div><span class='block-label'>邮箱:</span><input value={$Leader.mail} class="mail"  name="mail[]" type="text"></div>
+			<div><span class='block-label'>QQ:</span><input value={$Leader.qq} class="qq" name="qq[]" type="text"> </div>
+		</div>		
+	</div>
+
+	<volist name='Members' id='member'>
+	<div class="bs-docs-example block-member float-left">
+		<div class="leader">
+			<input type='hidden' name='memberId[]' value={$member.id}>
+			<div><span class='block-label'>姓名:</span><input value={$member.name}  class="person-name" name="name[]" type="text"></div>
+			<div><span class='block-label'>学号:</span><input value={$member.studentId} class="student-id" name="sid[]" type="text"></div>
+			<div><span class='block-label'>学院:</span><input value={$member.school} class="school" name="school[]" type="text"></div>
+			<div><span class='block-label'>专业班级:</span><input value={$member.class} class="class"  name="class[]" type="text"> </div>
+			<div><span class='block-label'>宿舍:</span><input value={$member.dorm} class="dorm" name="dorm[]" type="text"></div>
+			<div><span class='block-label'>手机:</span><input value={$member.phone} class="phone" name="phone[]" type="text"></div>
+			<div><span class='block-label'>短号:</span><input value={$member.shortphone|default='--'} class="sPhone" name="sPhone[]" type="text"></div>
+			<div><span class='block-label'>邮箱:</span><input value={$member.mail} class="mail"  name="mail[]" type="text"></div>
+			<div><span class='block-label'>QQ:</span><input value={$member.qq} class="qq" name="qq[]" type="text"> </div>
+		</div>		
+	</div>
+	</volist>
+
+	<div class="bs-docs-example clear none">
+		<div class='clear confirm'>
+			<div class="account">
+				<div><span class='block-label'>登陆账号:</span>
+					{$Team.username}
+				</div>
+				<!-- <div><span class='block-label'>登陆密码:</span><input id="password" name="password" type="password"></div>
+ -->			</div>
+			<div class="submit">
+				<button class="btn pull-right submit" type="submit">确认修改</button>
+			</div>
+		</div>
+	</div>
+
+</form>
+<script type="text/javascript">
+	window.imgPath = "__IMG__/";
+	var previousTName = ($('#team-name')[0]).value;
+</script>
+<script type="text/javascript" src="__JS__/validate/validation.js"></script>
+<script type="text/javascript" src="__JS__/validate/demoUsage.js"></script>
+<script type="text/javascript" src="__JS__/changeInfo/changeInfo.js"></script>
+
+<include file="Common:footer" />
+

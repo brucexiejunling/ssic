@@ -1,0 +1,13 @@
+<link rel="stylesheet" type="text/css" href="__CSS__/Admin/sidebar.css"/>
+
+<div class='sidebar-wrapper'>
+	<ul class="nav nav-tabs nav-stacked">
+		<volist name='navs' id='vo'>
+			<li class="{$vo.active}">
+				<a href="{$vo.url}"> {$vo.name} <i class="icon-chevron-right"></i> </a>
+			</li>
+            
+		</volist>	
+        
+	</ul>
+</div>

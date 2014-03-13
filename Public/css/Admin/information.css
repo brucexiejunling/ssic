@@ -1,0 +1,61 @@
+
+textarea.information {
+	width: 670px;
+	min-height: 400px;
+	float: right;
+	font-size: 16px;
+	text-align: left;
+	display: block;
+/*	border-color: transparent;
+*/}
+
+textarea.information:focus,
+textarea.information:hover {
+	background-color: #f8f8f8;
+}
+
+div.wrapper {
+	padding: 5px;
+	overflow: hidden;
+}
+
+div.main * {
+	font-family: '微软雅黑', '圆体';
+}
+
+div.buttons {
+	height: 120px;
+	clear: both;
+}
+
+/*Edit block*/
+div.edit-block {
+	border: 1px solid #ededed;
+	width: 88%;
+	padding: 20px 15px;
+	padding-right: 25px;
+	border-radius: 8px;
+	overflow: hidden;
+	margin-left: 20px;
+	margin-bottom: 20px;
+}
+
+div.edit-block textarea {
+	resize: none;
+	width: 670px;
+	min-height: 300px;
+	float: left;
+	font-size: 16px;
+	text-align: left;
+	display: block;
+}
+div.edit-block h2 {
+	font-size: 20px;
+	margin: 0px;
+	padding: 0px;
+	margin-bottom: 20px;
+	border-bottom: 1px solid #ccc;
+}
+button.info-btn {
+	margin-right: 20px;
+}

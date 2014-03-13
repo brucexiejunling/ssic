@@ -1,0 +1,11 @@
+<include file="Common:header" />
+	<p>老师您好！ 感谢您对大赛的支持！ 请您先登陆，然后对参赛队伍的作品进行点评:)</p>
+	<div class="login-dialog">
+		<form id="login-form" method="post" action="{:U('teacherComment')}">
+			<span>账号:</span><input type="text" class="username" name="username"><br>
+			<span>密码:</span><input type="password" class="password" name="password"><br>
+			<span><button class="btn" type="submit">确认登陆</button></span>
+		</form>
+	</div>	
+
+<include  file="Common:footer" />

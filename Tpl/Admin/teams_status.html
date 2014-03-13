@@ -1,0 +1,62 @@
+<include file='Common:header'/>
+<include file='sidebar' />
+
+<link rel="stylesheet" type="text/css" href="__CSS__/Admin/information.css">
+<link rel="stylesheet" type="text/css" href="__CSS__/Admin/teams_status.css">
+
+<div class='wrapper'>
+	<form class='teams-form'>
+		<table class='table table-bordered table-hover'>
+			<thead >
+				<tr>
+					<th>队伍名称</th>
+					<th>晋级状态</th>
+					<th>淘汰阶段</th>
+					<th>编辑状态</th>
+				</tr>
+			</thead>
+			<tbody>
+				<volist name='teams' id='vo'>
+					<tr>
+						<td>{$vo.name}</td>
+
+						<td>
+							<?php
+								if($vo['status'] == 'in') {
+									echo '晋级';
+								} else if($vo['status'] == 'out') {
+									echo '淘汰';
+								} else {
+									echo '复活';
+								}
+							?>
+						</td>
+
+						<td>
+							<?php 
+								echo isset($map[$vo['outStage']]) ? $map[$vo['outStage']] : '--';
+							?>
+						</td>
+
+						<td data-id='{$vo.id}'>
+							<select name='{$vo.id}' value='{$vo.status}'>
+								<option value='in' <?php echo $vo['status'] == 'in' ? 'selected' : '' ?> >晋级</option>
+								<option value='out' <?php echo $vo['status'] == 'out' ? 'selected' : '' ?> >淘汰</option>
+								<option value='revive' <?php echo $vo['status'] == 'revive' ? 'selected' : '' ?> >复活</option>
+							</select>
+						</td>
+					</tr>
+				</volist>
+			</tbody>
+		</table>
+	</form>
+	
+	<div class='buttons'>
+		<button class='btn btn-large pull-right modify'>保存修改</button>
+	</div>
+
+</div>
+
+<script type="text/javascript" src='__JS__/Admin/teams_status.js'></script>
+
+<include file='Common:footer'/>

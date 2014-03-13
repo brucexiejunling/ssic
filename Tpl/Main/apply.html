@@ -1,0 +1,90 @@
+<include file='Common:header' />
+
+<include file='Main:siderbar' />
+
+<link rel="stylesheet" type="text/css" href="__CSS__/Main/base.css"/>
+<link rel="stylesheet" type="text/css" href="__CSS__/Main/apply.css"/>
+
+<div class='content'>
+	<div class='alert alert-block'>
+		更多关于大赛的信息及具体规则可参阅<a href="__PUBLIC__/file/rules.pdf">参赛手册</a><br/><br/>
+		初审阶段开题报告模板<a href="__PUBLIC__/file/第九届_创新赛_开题报告.docx">下载</a>
+	</div>
+	<h3>报名信息:</h3>
+	<h4>队伍名称：{$Team.name} &nbsp &nbsp &nbsp 队伍编号： {$Team.number}</h4>
+	<div class='members'>
+		<table class='table table-hover'>
+			<thead><h4>成员:</h4></thead>
+			<tbody>
+				<tr class='table-head'>
+					<th>姓名</th>
+					<th>学号</th>
+					<th>学院</th>
+					<th>专业班级</th>
+					<th>电话</th>
+					<th>短号</th>
+					<th>邮箱</th>
+					<th>QQ</th>
+					<th>宿舍</th>
+				</tr>
+				<tr>
+					<td>{$leader.name}<br/>(队长)</td>
+					<td>{$leader.studentId}</td>
+					<td>{$leader.school}</td>
+					<td>{$leader.class}</td>
+					<td>{$leader.phone}</td>
+					<td>{$leader.shortphone|default='--'}</td>
+					<td>{$leader.mail}</td>
+					<td>{$leader.qq}</td>
+					<td>{$leader.dorm}</td>
+				</tr>
+				<volist name='Members' id='member'><tr>
+					<td>{$member.name}</td>
+					<td>{$member.studentId}</td>
+					<td>{$member.school}</td>
+					<td>{$member.class}</td>
+					<td>{$member.phone}</td>
+					<td>{$member.shortphone|default='--'}</td>
+					<td>{$member.mail}</td>
+					<td>{$member.qq}</td>
+					<td>{$member.dorm}</td>
+				</tr></volist>
+			</tbody>
+		</table>
+	</div>
+
+	<div class='advisors'>
+		<table class='table table-hover'>
+			<thead><h4>指导老师:</h4></thead>
+			<tbody>
+				<tr class='table-head'>
+					<th>姓名</th>
+					<th>职称</th>
+					<th>所在单位</th>
+					<th>联系方式</th>
+					<th>在项目中起的作用</th>
+				</tr>
+
+				<volist name='Advisors' id='advisor'><tr>
+					<td>{$advisor.name|default='--'}</td>
+					<td>{$advisor.position|default='--'}</td>
+					<td>{$advisor.department|default='--'}</td>
+					<td>{$advisor.contact|default='--'}</td>
+					<td>{$advisor.contribute|default='--'}</td>
+				</tr></volist>
+
+			</tbody>
+		</table>
+		
+	</div>
+	<div class='change-info'>
+		<a class='btn btn-info' href='{:U('logout')}'>退出登录</a>
+		<eq name='canApply' value='true'>
+		<a href='{:U('ChangeInfo/index')}' class='btn btn-info'>修改报名信息</a>
+		<a class='btn btn-danger' id='deleteTeam' href='{:U('deleteTeam')}'>撤消报名</a>
+		</eq>
+		
+	</div>
+</div>
+<script type="text/javascript" src='__JS__/Main/apply.js'></script>
+<include file='Common:footer' />

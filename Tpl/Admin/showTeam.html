@@ -1,0 +1,26 @@
+<include file='Common:header'/>
+<link rel="stylesheet" type="text/css" href="__CSS__/Admin/showTeam.css">
+<include file='sidebar' />
+<div class='content pull-right'>
+    <table class='table'>
+        <tr>
+            <th>队伍编号</th>
+            <th>队伍名</th>
+            <th>登录帐号</th>
+        </tr>
+        <volist name='teams' id='team'>
+        <tr>
+            <input type='hidden' value={$team.id} />
+            <td>{$team.number}</td> 
+            <td>{$team.name}</td> 
+            <td>{$team.username}</td>
+            <td>
+               <a class='btn btn-info moreInfo' href='__URL__/moreInfo/teamId/{$team.id}'>详细信息</a> 
+               <button class='btn btn-mini btn-danger delete'>删除</button> 
+            </td>
+        </tr>
+        </volist>
+    </table>
+</div>
+<script type="text/javascript" src="__JS__/Admin/deleteTeam.js"></script>
+<include file='Common:footer'/>

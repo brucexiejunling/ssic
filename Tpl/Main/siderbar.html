@@ -1,0 +1,53 @@
+<link rel="stylesheet" type="text/css" href="__CSS__/Main/sidebar.css"/>
+<div class='sidebar-bar sidebar-wrapper'>
+	<!-- <ul class="nav nav-tabs nav-stacked">
+		<li class="active">
+			<a href="#">报名</a>
+		</li>
+		<li class="">
+			<a href="#">开题报告</a>
+		</li>
+		<li class="">
+			<a href="#">初赛</a>
+		</li>
+		<li class="">
+			<a href="#">复赛</a>
+		</li>
+		<li class="">
+			<a href="#">复活赛</a>
+		</li>
+		<li class="">
+			<a href="#">决赛</a>
+		</li>
+	</ul> -->
+	<ul class="nav nav-pills">
+		<volist name='orderList' id='vo'>
+			<if condition="$orderList[$key] eq $orderList[$activePage]">
+				<li class='active'>
+					<a href="{:U($key)}">{$stageList[$key]}阶段</a>
+					<if condition="$orderList[$key] neq 1">
+					  <div class='active-line'></div>
+					</if>
+
+			<elseif condition="$orderList[$key] gt $latestPageOrder" />
+				<li class='disabled'>
+					<div class='line'></div>
+					<a href='#'>{$stageList[$key]}阶段</a>
+			<else /> 
+				<li class='active'>
+					<a href="{:U($key)}">{$stageList[$key]}阶段</a>
+					<if condition="$orderList[$key] neq 1">
+					  <div class='active-line'></div>
+					</if>
+				</if>
+				<li>
+			<!-- <eq name='key' value='$activePage'><li class='active'><else/><li></eq>
+				<a href="{:U($key)}">{$vo}阶段</a>
+			</li> -->
+
+
+		</volist>
+		<script></script>
+	</ul>
+</div>
+

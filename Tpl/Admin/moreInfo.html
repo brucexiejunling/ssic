@@ -1,0 +1,78 @@
+<include file='Common:header' />
+
+<link rel="stylesheet" type="text/css" href="__CSS__/Main/base.css"/>
+<link rel="stylesheet" type="text/css" href="__CSS__/Main/apply.css"/>
+
+<div class='content'>
+    <h3>队伍信息:</h3>
+    <h4>队伍名称：{$Team.name}</h4>
+    <div class='members'>
+        <table class='table table-hover'>
+            <thead><h4>成员:</h4></thead>
+            <tbody>
+                <tr class='table-head'>
+                    <th>姓名</th>
+                    <th>学号</th>
+                    <th>学院</th>
+                    <th>专业班级</th>
+                    <th>电话</th>
+                    <th>短号</th>
+                    <th>邮箱</th>
+                    <th>QQ</th>
+                    <th>宿舍</th>
+                </tr>
+                <tr>
+                    <td>{$leader.name}<br/>(队长)</td>
+                    <td>{$leader.studentId}</td>
+                    <td>{$leader.school}</td>
+                    <td>{$leader.class}</td>
+                    <td>{$leader.phone}</td>
+                    <td>{$leader.shortphone|default='--'}</td>
+                    <td>{$leader.mail}</td>
+                    <td>{$leader.qq}</td>
+                    <td>{$leader.dorm}</td>
+                </tr>
+                <volist name='members' id='member'><tr>
+                    <td>{$member.name}</td>
+                    <td>{$member.studentId}</td>
+                    <td>{$member.school}</td>
+                    <td>{$member.class}</td>
+                    <td>{$member.phone}</td>
+                    <td>{$member.shortphone|default='--'}</td>
+                    <td>{$member.mail}</td>
+                    <td>{$member.qq}</td>
+                    <td>{$member.dorm}</td>
+                </tr></volist>
+            </tbody>
+        </table>
+    </div>
+
+    <div class='advisors'>
+        <table class='table table-hover'>
+            <thead><h4>指导老师:</h4></thead>
+            <tbody>
+                <tr class='table-head'>
+                    <th>姓名</th>
+                    <th>职称</th>
+                    <th>所在单位</th>
+                    <th>联系方式</th>
+                    <th>在项目中起的作用</th>
+                </tr>
+
+                <volist name='Advisors' id='advisor'><tr>
+                    <td>{$advisor.name|default='--'}</td>
+                    <td>{$advisor.position|default='--'}</td>
+                    <td>{$advisor.department|default='--'}</td>
+                    <td>{$advisor.contact|default='--'}</td>
+                    <td>{$advisor.contribute|default='--'}</td>
+                </tr></volist>
+
+            </tbody>
+        </table>
+        
+    </div>
+    <div class='change-info'>
+        <a class='btn btn-info' href='{:U('showTeam')}'>返回</a>
+    </div>
+</div>
+<include file='Common:footer' />

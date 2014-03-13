@@ -1,0 +1,32 @@
+div.info{
+	min-height: 500px;
+	margin-top: -32px;
+}
+
+span.info-type{
+	font-size: 35px;
+	color: rgb(179, 211, 211);
+	font-weight: bold;
+	text-shadow: 4px 2px rgb(104, 94, 86);
+	letter-spacing: 3px;
+}
+
+div.intro{
+/*	border: solid 1px #c0c6c7;
+*/	min-height: 150px;
+	margin-bottom: 10px;
+}
+
+pre{
+	border: none;
+	background-color: transparent;
+}
+div.rule-title{
+	margin-top: 25px;
+	margin-bottom: 10px;
+}
+div.rule{
+	margin-top: 12px;
+	min-height: 150px;
+	border: solid 1px #c0c6c7;
+}

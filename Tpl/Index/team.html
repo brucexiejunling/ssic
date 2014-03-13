@@ -1,0 +1,76 @@
+<link rel="stylesheet" type="text/css" href="__CSS__/index/team.css">
+  <div id="myCarousel" class="picture-galley carousel slide">
+  <!-- Carousel items -->
+  <div class='block-heading'>历届风采</div>
+  <div class="carousel-inner picture-wall box">
+    <div class="active item">
+      <img src="__IMG__/contest1.jpg">
+    </div>
+    <div class="item">
+      <img src="__IMG__/contest2.jpg">
+    </div>
+    <div class="item">
+      <img src="__IMG__/contest3.jpg">
+    </div>
+    <div class="item">
+      <img src="__IMG__/contest4.jpg">
+    </div>
+    <div class="item">
+      <img src="__IMG__/contest5.jpg">
+    </div>
+    <div class="item">
+      <img src="__IMG__/contest6.jpg">
+    </div>
+    <div class="item">
+      <img src="__IMG__/contest7.jpg">
+    </div>
+
+  </div>
+  <!-- Carousel nav -->
+  <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+  <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
+
+   <div class="indicator-list">
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+      <li data-target="#myCarousel" data-slide-to="3" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="4"></li>
+      <li data-target="#myCarousel" data-slide-to="5"></li>
+      <li data-target="#myCarousel" data-slide-to="6"></li>
+    </ol>
+  </div>
+</div>
+
+<div class='block-heading fuckyou'>参赛队伍</div>
+<div class="team-slider intro box">
+  <div class="team-pages">     
+    <div class="ranklist">
+      <ul id="ranklist">  
+
+     <for start="0" end="$teamCount" name="i">
+        <if condition="$Tname[$i]">
+        <li class="team-item">  
+           <span class="team-name">{$i+1}.{$Tname[$i]}<br></span>
+            <div class="team-details">
+               <span id="team-details">队员:<br>{$members[$i]}</span>
+            </div>
+        </li>   
+        </if>
+    </for>     
+     </ul>
+    </div>
+  </div>
+
+</div>  
+
+<script type="text/javascript" src="__JS__/slider/slider.js"></script>
+<script type="text/javascript">
+  console.log($('div.ranklist'))
+  $("div.ranklist").myScroll({
+    speed:40,
+    rowHeight:30
+  });
+</script>
+<script type="text/javascript" src="__JS__/index/team.js"></script>

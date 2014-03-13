@@ -1,0 +1,69 @@
+<include file='Common:header'/>
+<include file='sidebar' />
+<link rel="stylesheet" type="text/css" href="__CSS__/Admin/information.css">
+<link rel="stylesheet" type="text/css" href="__CSS__/Admin/datepicker.css">
+<link rel="stylesheet" type="text/css" href="__CSS__/Admin/period.css">
+
+<div class='wrapper'>
+<!-- 	<?php echo print_r($periods); ?>
+ -->	<table class='table table-bordered'>
+		<thead>
+			<tr>
+				<th>阶段</th>
+				<th>开始时间</th>
+				<th>结束时间</th>
+			</tr>
+		</thead>
+		<tbody>
+			<volist name='periods' id='vo'>
+			<tr class='period' data-id='{$vo.id}'>
+				<td class='middle'>{$vo.descript}</td>
+				<td>
+					<div class="input-append date datepicker" id="dp3" data-date="<?= substr($vo['startTime'], 0, 10) ?>" data-date-format="yyyy-mm-dd">
+						<input data-id='{$vo.id}' name='startTime' class="span2" size="16" type="text" readonly="" value="<?= substr($vo['startTime'], 0, 10) ?>">
+						<span class="add-on">
+							<i class="icon-calendar"></i>
+						</span>
+					</div>
+					<select class='select' name='startTime-hour'>
+						<?php
+							for ($i = 0; $i <= 23; $i++) {
+								$val = $i < 10 ? '0'.$i : ''.$i;
+								$selected = substr($vo['startTime'], 11, 2) == $val ? 'selected' : '';
+								echo "<option value='$val' $selected>$val</option>";
+							}
+						?>
+					</select>
+				</td>
+				<td>
+					<div class="input-append date datepicker" id="dp3" data-date="<?= substr($vo['endTime'], 0, 10) ?>" data-date-format="yyyy-mm-dd">
+						<input data-id='{$vo.id}' name='endTime' class="span2" size="16" type="text" readonly="" value="<?= substr($vo['endTime'], 0, 10) ?>">
+						<span class="add-on">
+							<i class="icon-calendar"></i>
+						</span>
+					</div>
+					<select class='select' name='endTime-hour' value="<?= substr($vo['endTime'], 11, 2) ?>">
+						<?php
+							for ($i = 0; $i <= 23; $i++) {
+								$val = $i < 10 ? '0'.$i : $i;
+								$selected = substr($vo['endTime'], 11, 2) == $val ? 'selected' : '';
+								echo "<option value='$val' $selected>$val</option>";
+							}
+						?>
+					</select>
+				</td>
+			</tr>
+			</volist>
+		</tbody>
+	</table>
+
+	<div class='buttons'>
+		<button class='btn btn-large pull-right modify'>保存修改</button>
+	</div>
+
+</div>
+
+<script type="text/javascript" src='__JS__/Admin/bootstrap-datepicker.js'></script>
+<script type="text/javascript" src='__JS__/Admin/period.js'> </script>
+
+<include file='Common:footer'/>

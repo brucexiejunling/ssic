@@ -1,0 +1,100 @@
+div.signup-form{
+	/*border: solid 1px;*/
+}
+
+div.team-info div{
+	margin-top: 10px;
+	margin-bottom: 10px; 
+}
+
+input {
+	width: 185px;
+	margin-top: 5px;
+}
+
+span.block-label {
+	display: inline-block;
+	width: 80px;
+	margin-right:10px;
+	margin-top: -5px;
+	text-align: right;
+}
+
+form {
+	display: block;
+	overflow: hidden;
+	margin-left: 65px;
+}
+
+.bs-docs-example {
+	position: relative;
+	min-height: 100px;
+	width: 400px;
+	margin-bottom: 15px;
+	padding: 39px 19px 14px;
+	background-color: #f4f4f4;
+	border: 1px solid #ddd;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-size: 14px;
+	line-height: 20px;
+	color: #333;
+}
+
+.bs-docs-example:after {
+	position: absolute;
+	width: 	80px;
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+	top: -1px;
+	left: -1px;
+	padding: 3px 7px;
+	font-size: 16px;
+	font-weight: bold;
+	background-color: #f5f5f5;
+	border: 1px solid #ddd;
+	color: #9da0a4;
+	-webkit-border-radius: 4px 0 4px 0;
+	-moz-border-radius: 4px 0 4px 0;
+	border-radius: 4px 0 4px 0;
+}
+.block-leader:after {
+	content: "队长";
+	font-family: '圆体', '微软雅黑';
+}
+.block-member:after {
+	content: "队员";
+	font-family: '圆体', '微软雅黑';
+}
+.block-team:after {
+	content: "团队信息";
+	font-family: '圆体', '微软雅黑';
+}
+.block-teacher {
+	height: 235px;
+}
+.block-teacher:after {
+	content: "指导老师";
+	font-family: '圆体', '微软雅黑';
+}
+
+.clear {
+	clear: both;
+}
+
+.bs-docs-example.none:after {
+	display: none;
+}
+
+.confirm {
+	overflow: hidden;
+}
+
+.float-left {
+	margin-right: 20px;
+	float: left;
+	overflow: hidden;
+}

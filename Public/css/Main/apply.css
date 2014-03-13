@@ -1,0 +1,27 @@
+div.members {
+	margin-top: 15px;	
+	overflow: auto;
+}
+
+div.advisors {
+	margin-top: 15px;
+	overflow: auto;
+}
+
+
+div.change-info {
+	margin-top: 30px;
+	margin-bottom: 30px;
+	float: right;
+}
+/*p.member-info {
+	display: inline-block;
+	min-width: 200px;
+	margin-left: 20px;
+	border-bottom: 1px solid #ddd;
+}
+p.member-info > span {
+	font-weight: bold;
+	margin-left: 10px;
+}*/
+

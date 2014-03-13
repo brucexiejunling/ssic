@@ -1,0 +1,185 @@
+*{
+	border-radius: 5px 5px 5px 5px;                   
+}
+
+
+div.box{
+/*	-moz-box-shadow:5px 5px 5px #999 ;  
+*/	
+border: 1px solid #e4e4e4;
+/*box-shadow: 0 0px 1px rgba(0,0,0,0.15);
+*//*-webkit-box-shadow:2px 2px 2px #ccc ;  
+*//*		-o-box-shadow:5px 5px 5px #999 ;            
+	box-shadow:2px 2px 2px #ccc ;  
+*/}
+a{
+	text-align: center;
+}
+
+div.left-bar{
+	padding-top: 1px;
+	width: 79%;
+}
+
+div.team-info{
+	width: 100%;
+	height: 410px;
+
+}
+
+div.team-img{
+	float: left;
+	border: solid 1px;
+	width: 67%;
+	height: 90%;
+}
+
+div.team-img img{
+	height: 100%;
+}
+
+div.right-bar{
+	float: right;
+	width: 20%;
+	border: solid 0px transparent;
+}
+
+ul.nav-tabs{
+	margin-bottom: 28px;
+}
+
+ul.nav-tabs a{
+	height: 30px;
+	font-size: 20px;
+	padding-top: 15px;
+	padding-bottom: 4px;
+	font-weight: bold;
+}
+
+
+.popover.right{
+	margin-left: 8px;
+	left: 1729.33342px!important;
+}
+
+div.login-dialog{
+	display: none;
+	margin-left: 10px;
+}
+div.login-dialog input{
+	width: 160px;
+}
+
+#after-login{
+	/*margin-top: -15px;*/
+	display: none;
+	margin-top: -30px;
+}
+
+div.contest-route{
+	border-top: dotted 1px rgb(160,99,99);	
+	min-height: 200px;
+}
+
+div.contest-route span{
+	display: block;
+	text-align: center;
+	margin: 25px auto 15px auto;
+	font-size: 20px;
+	font-weight: bold;
+	color: #08c;
+}
+div.contest-route pre{
+	
+}
+div.contact-us{
+	border-top: dotted 1px rgb(160,99,99);
+	min-height: 200px;
+}
+
+div.contact-us span{
+	display: block;
+	text-align: center;
+	margin: 25px auto 15px auto;
+	font-size: 20px;
+	font-weight: bold;
+	color: #08c;
+}
+
+/*Added By daijiahua*/
+body {
+	background-image: url('../../img/bg.png');
+}
+
+div.global {
+	background-color: #fff;
+	padding: 0 20px;
+	box-shadow: 0 0 5px 0 silver;
+	margin: 0 auto;
+	background: url('../../img/opacity_bg.png') #f8f8f8;
+/*	background-image: url('../../img/content_bg.png');
+*/}
+
+div.shadow {
+	box-shadow: 0 0 5px 0 silver;
+}
+
+div.opacity-bg {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	background: url('../../img/opacity_bg.png');
+	top: 0px;
+	left: 0px;
+	z-index: -1;
+}
+
+.overflow-hidden {
+	overflow: hidden;
+}	
+
+.clear {
+	clear: both;
+}
+
+div.block-heading {
+	z-index: 10000;
+	display: block;
+	font-size: 0.67em;
+	min-height: 30px;
+	-webkit-margin-before: 2.33em;
+	-webkit-margin-after: 2.33em;
+	-webkit-margin-start: 0px;
+	-webkit-margin-end: 0px;
+	text-rendering: optimizelegibility;
+	margin: 10px 0;
+	line-height: 30px;
+	font-family: inherit;
+	color: #555555;
+	font-size: 18px;
+	font-weight: bolder;
+	border: 1px solid #ebebeb;
+	box-shadow: 0 0px 1px rgba(0,0,0,0.15);
+	margin-top: 0px;
+	padding: 6px;
+	text-indent: 10px;
+	background: #fcfcfc;
+
+	background: -moz-linear-gradient(top, #fcfcfc 0%, #EBECEC 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #fcfcfc), color-stop(100%, #EBECEC));
+	background: -webkit-linear-gradient(top, #fcfcfc 0%, #EBECEC 100%);
+	background: -o-linear-gradient(top, #fcfcfc 0%, #EBECEC 100%);
+	background: -ms-linear-gradient(top, #fcfcfc 0%, #EBECEC 100%);
+
+	background: linear-gradient(top, #fcfcfc 0%, #EBECEC 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fcfcfc', endColorstr='#EBECEC',GradientType=0 );
+}
+
+div.fuckyou {
+	width: 184px;
+	float: right;
+}
+
+pre.right-pre {
+	min-height: 150px;
+}
